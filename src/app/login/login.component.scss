@@ -1,0 +1,25 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+.mat-toolbar {
+    background-color: #ff4081;
+    margin-bottom: 1em;
+    color: white;
+}
+p {
+    font-weight: lighter;
+    font-size: 30px;
+}
+.main-div {
+    margin-top: 20px;
+}
+.main-div mat-card {
+    padding: 0px;
+}
+.main-form {
+    padding: 2em;
+    background-color: #ffffff;
+}
+.main-div mat-card-content {
+    background-color: green;
+}
