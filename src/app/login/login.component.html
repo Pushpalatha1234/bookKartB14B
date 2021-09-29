@@ -13,12 +13,13 @@
         <mat-card-content>
             <form [formGroup]="loginForm" (ngSubmit)="onlogin()" class="main-form">
                 <div fxLayoutAlign="stretch" fxLayout="column" class="form-group">
-                    <mat-form-field appearance="fill">
+
+                    <mat-form-field>
                         <mat-label>Username *</mat-label>
                         <input matInput formControlName="username">
                         <mat-error *ngIf="loginForm.controls.username.errors?.required">username is required</mat-error>
                     </mat-form-field><br>
-                    <mat-form-field appearance="fill">
+                    <mat-form-field>
                         <mat-label>Password *</mat-label>
                         <input formControlName="username" matInput [type]="hide ? 'password' : 'text'">
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"

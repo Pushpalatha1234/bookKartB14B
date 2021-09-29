@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="docs-example-viewer-wrapper">
+        <div class="docs-example-viewer-title mat-elevation-z2">
+            <div class="docs-example-viewer-title-spacer">
+                <h2>My wishlist</h2>
+
+                <div class="ng-star-inserted">
+                    <button mat-raised-button
+                        class="mat-focus-indicator mat-elevation-z4 mat-raised-button mat-button-base">
+                        <span (click)="emptywishlist()" class="mat-button-wrapper">Clear wishlist</span>
+                        <span matripple class="mat-ripple mat-button-ripple"></span>
+                        <span class="mat-button-focus-overlay"></span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <mat-card class="mat-card mat-focus-indicator ng-star-inserted">
+        <mat-card-content class="mat-card-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Title</th>
+                        <th>MRP</th>
+                        <th>AddtoCart</th>
+
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+            </table>
+        </mat-card-content>
+        <table class="table">
+            <tbody>
+                <tr class="ng-star-inserted">
+                    <mat-card-content class="mat-card-content mat-elevation-z2">
+                        <td><img mattooltipposition="after" class="mat-tooltip-trigger"
+                                src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2016%2F09%2Fhpsorcstone.jpg"
+                                aria-describedby="cdk-describedby-message-106" cdk-describedby-host="">
+                            <!---->
+                        </td>
+                        <td><a href="/books/details/2">HP2</a></td>
+                        <td>234.00</td>
+
+                        <td>
+                            <button mat-raised-button="" color="primary"
+                                class="mat-focus-indicator mat-raised-button mat-button-base mat-primary">
+                                <span class="mat-button-wrapper">
+                                    <span>
+                                        <mat-icon role="img"
+                                            class="mat-icon notranslate material-icons mat-icon-no-color"
+                                            aria-hidden="true" data-mat-icon-type="font">shopping_cart
+                                        </mat-icon>
+                                    </span> Add to Cart
+                                </span>
+                                <span matripple="" class="mat-ripple mat-button-ripple"></span>
+                                <span class="mat-button-focus-overlay">
+                                </span>
+                            </button>
+                        </td>
+                        <td>
+                            <button mat-raised-button=""
+                                class="mat-focus-indicator mat-raised-button mat-button-base wishlisted ng-star-inserted">
+                                <span class="mat-button-wrapper">Remove from wishlist
+                                </span>
+                                <span matripple="" class="mat-ripple mat-button-ripple">
+                                </span>
+                                <span class="mat-button-focus-overlay">
+                                </span>
+                            </button>
+
+                        </td>
+
+                    </mat-card-content>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card>
+</div>
