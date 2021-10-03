@@ -1,45 +1,33 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';  
-//import { Book } from './book';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+
 @Injectable({
   providedIn: 'root'
 })
 export class WishlistService {
-  SubscriptionService: any;
-  subscriptionService: any;
 
-  constructor(private http: HttpClient) {
-    const baseURL = "https://bookcart.azurewebsites.net/wishlist";
-  }
-  /*toggleWishlistItem(userId: number, bookId: number) {
-    return this.http.post("https://bookcart.azurewebsites.net/wishlist", {})
-      .pipe(map((response: Book[]) => {
-        this.setWishlist();
-        return response;
-      }));
-  }*/
+  baseURL = 'https://bookcart.azurewebsites.net/api';
+  constructor(private http: HttpClient) { }
 
-  /*getWishlistItems(userId: number) {
-    return this.http.get("https://bookcart.azurewebsites.net/wishlist" + {})
-      .pipe(map((response: Book[]) => {
-        this.setWishlist(response);
-        return response;
-      }));
-  }*/
-
-  setWishlist(response:[]) {
-    this.SubscriptionService.wishlistItemcount$.next(response.length);
-    this.subscriptionService.wishlistItem$.next(response);
+  addToWistList(): Observable<any>{
+    //let userId = sessionStorage.getItem('userId')
+    let userId = 295;
+    let bookId=5;
+    return this.http.post<any>(`https://bookcart.azurewebsites.net/api/Wishlist/ToggleWishlist/${userId}/${bookId}`, {});
   }
 
-  clearWishlist(userId: number) {
-    return this.http.delete<number>("https://bookcart.azurewebsites.net/wishlist", {})
-      .pipe(map((response: number) => {
-        this.SubscriptionService.wishlistItem$.next([]);
-        return response;
-      })
-      );
+  wishList(): Observable<any>{
+    let userId=295;
+    //let bookId=3
+    //let data={};
+    //let access_token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJTYWhlYkphbmEiLCJ1c2VyaWQiOiIyOTMiLCJ1c2VyVHlwZUlkIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjIiLCJqdGkiOiI0YzgzMjM0MS04OGEzLTRlNGYtYWQ2MC1lZjEyODRhNDE0MjYiLCJleHAiOjE2MzI5Mzc3MzUsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzY0LyIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzY0LyJ9.EtM5_FQXEt4m77kukjNO0O6EgCSM3LeL2aSb3oTQTv8";
+    //let httpParams = new HttpParams().set('token', access_token);
+    //let options = { params: httpParams }; 
+    return this.http.get<any>(this.baseURL+'/Wishlist/'+userId);
+  }
+  removewishListItem(): Observable<any>{
+    let userId=295;
+    return this.http.delete<any>(this.baseURL+'/Wishlist/'+userId);
   }
 }
-

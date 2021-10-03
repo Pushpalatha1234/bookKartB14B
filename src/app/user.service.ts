@@ -5,10 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-
-  constructor(private http: HttpClient) {
-    const baseURL = "https://bookcart.azurewebsites.net/api";
-  }
+  baseURL = 'https://bookcart.azurewebsites.net/api';
+  constructor(private http: HttpClient) { }
 
   registerUser(body: any) {
     return this.http.post<any>('https://bookcart.azurewebsites.net/api /user/', body)
