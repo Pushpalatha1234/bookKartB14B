@@ -3,7 +3,8 @@
 		<div class="docs-example-viewer-title mat-elevation-z2">
 			<div class="docs-example-viewer-title-spacer">
 				<h2>My wishlist</h2>
-				<div>
+				<div *ngIf="bookwistList.length>0">
+					
 					<button class="mat-elevation-z4" (click)="removeWishList()">Clear Wishlist</button>
 				</div>
 			</div>
@@ -20,7 +21,7 @@
 		</ng-template>
 		<div class="spinner-container"></div>
 		<mat-card>
-			<mat-card-content>
+			<mat-card-content *ngIf="bookwistList.length>0; else emptycart">
 				<table class="table">
 					<thead>
 						<tr>

@@ -33,5 +33,4 @@ export class WishlistComponent implements OnInit {
 		alert("fsdf"+i);
 		this.bookwistList.splice(i,1);
 	}
- 
 }
