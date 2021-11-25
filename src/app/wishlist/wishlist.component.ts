@@ -20,8 +20,13 @@ export class WishlistComponent implements OnInit {
 			console.log(this.bookwistList);
 		});
 	}
+	addtoCartItem(){
+		alert('one item added to cart');
+
+		//this.bookwistList.splice();
+	}
 	removeWishList(){
-		alert('hi');
+		alert('clear wishlist');
 		/*this.bookService.removewishListItem().subscribe((data) => {              
 			console.log(data);
 		});
@@ -30,7 +35,7 @@ export class WishlistComponent implements OnInit {
 
 	}
 	removewishListItem(i:number){
-		alert("fsdf"+i);
+		alert("Item removed from your wishlist"+i);
 		this.bookwistList.splice(i,1);
 	}
 }

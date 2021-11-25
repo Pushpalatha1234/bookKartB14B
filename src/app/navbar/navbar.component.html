@@ -1,12 +1,24 @@
 <mat-toolbar color="primary" class="mat-elevation-z8">
     <button mat-button color="basic" routerLink="BookCart">
-        <mat-icon>book</mat-icon>BookCart
+        <mat-icon>bookmark</mat-icon>BookCart
     </button>
     <div class="spacer"></div>
-    <button mat-icon-button color="white" routerLink="favorite">
-        <mat-icon matBadge="2" matBadgeColor="warn">favorite</mat-icon>
+    <!--<button mat-icon-button color="white" routerLink="favorite">
+        <mat-icon matBadge="" matBadgeColor="warn">favorite</mat-icon>
     </button>
-    <button mat-icon-button color="white" routerLink="addtocart">
-        <mat-icon matBadge="2" matBadgeColor="warn">shopping_cart</mat-icon>
-    </button>
+    <button mat-icon-button color="white" routerLink="shopping_cart">
+        <mat-icon matBadge="" matBadgeColor="warn">shopping_cart</mat-icon>
+    </button>--->
+    <mat-icon matbadgecolor="warn"
+        class="mat-icon notranslate mat-badge mat-badge-warn material-icons mat-icon-no-color mat-badge-overlap mat-badge-above mat-badge-after mat-badge-medium"
+        data-mat-icon-type="font" routerLink="favorite">favorite<span
+            class="mat-badge-content mat-badge-active">2</span>
+    </mat-icon>
+
+    <mat-icon role="img" matbadgecolor="warn"
+        class="mat-icon notranslate mat-badge mat-badge-warn material-icons mat-icon-no-color mat-badge-overlap mat-badge-above mat-badge-after mat-badge-medium"
+        aria-hidden="true" data-mat-icon-type="font" routerLink="shopping_cart">shopping_cart<span
+            id="mat-badge-content-0" class="mat-badge-content mat-badge-active">2</span>
+    </mat-icon>
+
 </mat-toolbar>

@@ -2,11 +2,12 @@
 	<ng-container>
 		<div class="docs-example-viewer-title mat-elevation-z2">
 			<div class="docs-example-viewer-title-spacer">
-				<h2>My wishlist</h2>
+				<h2>My Wishlist</h2>
 				<div *ngIf="bookwistList.length>0">
-					
-					<button class="mat-elevation-z4" (click)="removeWishList()">Clear Wishlist</button>
+
+					<button class="mat-elevation-z4" (click)="removeWishList()">Clear wishlist</button>
 				</div>
+
 			</div>
 		</div>
 		<ng-template #emptycart>
@@ -44,16 +45,20 @@
 							</td>
 							<td><a>{{wishlist.title}}</a></td>
 							<td>{{wishlist.price}}</td>
+
 							<td>
-								<button mat-raised-button="" color="primary"
-									class="mat-focus-indicator mat-raised-button mat-button-base mat-primary">
-									<span class="mat-button-wrapper"><span>
+								<button mat-raised-button="" color="primary" (click)="addtoCartItem()"
+									class="mat-focus-indicator mat-raised-button mat-button-base mat-primary"><span
+										class="mat-button-wrapper"><span>
 											<mat-icon role="img"
 												class="mat-icon notranslate material-icons mat-icon-no-color"
-												aria-hidden="true" data-mat-icon-type="font">shopping_cart</mat-icon>
-										</span> Add to Cart</span>
+												aria-hidden="true" data-mat-icon-type="font">shopping_cart
+											</mat-icon>
+										</span> Add to Cart
+									</span>
 									<span matripple="" class="mat-ripple mat-button-ripple"></span>
-									<span class="mat-button-focus-overlay"></span>
+									<span class="mat-button-focus-overlay">
+									</span>
 								</button>
 							</td>
 							<td>

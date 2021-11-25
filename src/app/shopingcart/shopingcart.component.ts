@@ -26,10 +26,12 @@ export class ShopingCartComponent implements OnInit {
 	// increment product qty
 	incrementQty() {
 		console.log(this.qty + 1);
+		alert("One item added to cart");
 		this.qty += 1;
 	}
 	// decrement product qty
 	decrementQty() {
+		alert("One item added to cart");
 		if (this.qty - 1 < 1) {
 			this.qty = 1
 			console.log('1->' + this.qty);
@@ -38,11 +40,13 @@ export class ShopingCartComponent implements OnInit {
 			console.log('2->' + this.qty);
 		}
 	}
+	
 	removeallcartItems(){
-		alert("fsdf");
+		alert("cart cleared");
 		this.cartItemList=[];
 	}
 	removecartItem(i:number){
+		alert("one item deleted");
 		this.cartItemList.splice(i,1);
 	}
 
