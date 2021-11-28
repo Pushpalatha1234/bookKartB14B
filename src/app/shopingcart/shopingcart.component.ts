@@ -50,5 +50,4 @@ export class ShopingCartComponent implements OnInit {
 		this.cartItemList.splice(i,1);
 	}
 
-	
 }
